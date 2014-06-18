@@ -6,6 +6,7 @@
 
 # Scala
 * [SBT and Maven](SBT_And_Maven.md)
+* [Defference Between Scala and Java](Difference_between_Scala_and_Java.markdown)
 
 # PHP
 
