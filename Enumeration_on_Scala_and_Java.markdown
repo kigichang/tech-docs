@@ -153,25 +153,23 @@ object Planets extends Enumeration {
   
   val G: Double = 6.67300E-11
 
-  final private[Planets] case class PlanetVal(mass: Double, radius: Double) extends Val {
+  final case class Planet private[Planets] (mass: Double, radius: Double) extends Val {
     def surfaceGravity(): Double = G * mass / (radius * radius)
     def surfaceWeight(otherMass: Double): Double = otherMass * surfaceGravity()
   }
   
-  type Planet = PlanetVal
-  
-  val Mercury = PlanetVal(3.303e+23, 2.4397e6)
-  val Venus = PlanetVal(4.869e+24, 6.0518e6)
-  val Earth = PlanetVal(5.976e+24, 6.37814e6)
-  val Mars = PlanetVal(6.421e+23, 3.3972e6)
-  val Jupiter = PlanetVal(1.9e+27,   7.1492e7)
-  val Saturn = PlanetVal(5.688e+26, 6.0268e7)
-  val Uranus = PlanetVal(8.686e+25, 2.5559e7)
-  val Neptune = PlanetVal(1.024e+26, 2.4746e7)
+  val Mercury = Planet(3.303e+23, 2.4397e6)
+  val Venus = Planet(4.869e+24, 6.0518e6)
+  val Earth = Planet(5.976e+24, 6.37814e6)
+  val Mars = Planet(6.421e+23, 3.3972e6)
+  val Jupiter = Planet(1.9e+27,   7.1492e7)
+  val Saturn = Planet(5.688e+26, 6.0268e7)
+  val Uranus = Planet(8.686e+25, 2.5559e7)
+  val Neptune = Planet(1.024e+26, 2.4746e7)
   
   
   def main(args: Array[String]) {
-    require(args.length >= 1, "Usage: java Planet <earth_weight>")
+    require(args.length == 1, "Usage: java Planet <earth_weight>")
     
     val earthWeight = args(0).toDouble  
     val mass = earthWeight / Planets.Earth.surfaceGravity
