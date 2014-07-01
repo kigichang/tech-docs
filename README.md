@@ -8,6 +8,10 @@
 * [SBT and Maven](SBT_And_Maven.md)
 * [Defference Between Scala and Java](Difference_between_Scala_and_Java.markdown)
 * [Enumeration on Scala and Java](Enumeration_on_Scala_and_Java.markdown)
+* [Scala Access Level](Scala_Access_Level.markdown)
+* Lazy
+
+
 
 # PHP
 
