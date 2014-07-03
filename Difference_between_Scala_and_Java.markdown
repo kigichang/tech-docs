@@ -203,8 +203,8 @@ def func(a: Int, b:Int = 10, c:Int) { }
 ```
 但如果不使用 keyword argument 的方式使用函式，就一定都要傳入參數，ex: `func()(1, 10, 3)` 不能是 `func(1,3)`。因此在設計程式時，建議還是將 default value 的 argument 放在最後。
 
-## Keyword Arguements
-keyword arguments 使用跟 python 相同，對於 Java 使用者來說，是一個非常陌生的功能。簡單來說，就是在使用函式時，使用 key-value 方式來傳入參數。 ex:
+## Named Arguements
+Named arguments 使用跟 python 相同，對於 Java 使用者來說，是一個非常陌生的功能。簡單來說，就是在使用函式時，使用 key-value 方式來傳入參數。 ex:
 
 ```
 def func(a: Int, b: Int=10, c:Int) { }
