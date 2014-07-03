@@ -32,7 +32,7 @@ class Rational(numer: Int, denom: Int) {
 
 	```
 	class Rational extends scala.AnyRef {
- 		  def this(numer : scala.Int, denom : scala.Int) = { /* compiled code */ }
+ 	  def this(numer : scala.Int, denom : scala.Int) = { /* compiled code */ }
 	}
 	```
 	
@@ -40,7 +40,7 @@ class Rational(numer: Int, denom: Int) {
 	
 	```
 	public class Rational {
- 			public Rational(int, int);
+ 		public Rational(int, int);
 	}
 	```
 
@@ -59,7 +59,7 @@ class Rational(val numer: Int, val denom: Int) {
 	
 	```
 	class Rational extends scala.AnyRef {
- 		  val numer : scala.Int = { /* compiled code */ }
+ 	  val numer : scala.Int = { /* compiled code */ }
 	  val denom : scala.Int = { /* compiled code */ }
 	  def this(numer : scala.Int, denom : scala.Int) = { /* compiled code */ }
 	}
@@ -69,11 +69,11 @@ class Rational(val numer: Int, val denom: Int) {
 
 	```
 	public class Rational {
-			private final int numer;
- 			private final int denom;
-  		public int numer();
- 			public int denom();
- 			public Rational(int, int);
+		private final int numer;
+		private final int denom;
+		public int numer();
+		public int denom();
+		public Rational(int, int);
 	}
 	```
 
@@ -92,9 +92,9 @@ class Rational(var numer: Int, var denom: Int) {
 	
 	```
 	class Rational extends scala.AnyRef {
-			  var numer : scala.Int = { /* compiled code */ }
-			  var denom : scala.Int = { /* compiled code */ }
-			  def this(numer : scala.Int, denom : scala.Int) = { /* compiled code */ }
+	  var numer : scala.Int = { /* compiled code */ }
+	  var denom : scala.Int = { /* compiled code */ }
+	  def this(numer : scala.Int, denom : scala.Int) = { /* compiled code */ }
 	}
 	```
 
@@ -102,13 +102,13 @@ class Rational(var numer: Int, var denom: Int) {
 
 	```
 	public class Rational {
-				private int numer;
-				private int denom;
-				public int numer();
-				public void numer_$eq(int);
-				public int denom();
-				public void denom_$eq(int);
-				public Rational(int, int);
+		private int numer;
+		private int denom;
+		public int numer();
+		public void numer_$eq(int);
+		public int denom();
+		public void denom_$eq(int);
+		public Rational(int, int);
 	}
 	```
 		
@@ -131,7 +131,7 @@ class Rational(@BeanProperty var numer: Int, @BeanProperty var denom: Int) {
 
 	```
 	class Rational extends scala.AnyRef {
- 		  var numer : scala.Int = { /* compiled code */ }
+ 	  var numer : scala.Int = { /* compiled code */ }
 	  def getNumer() : scala.Int = { /* compiled code */ }
 	  def setNumer(x$1 : scala.Int) : scala.Unit = { /* compiled code */ }
 	  var denom : scala.Int = { /* compiled code */ }
@@ -145,9 +145,9 @@ class Rational(@BeanProperty var numer: Int, @BeanProperty var denom: Int) {
 	
 	```
 	public class Rational {
- 			private int numer;
- 			private int denom;
- 			public int numer();
+ 		private int numer;
+ 		private int denom;
+ 		public int numer();
 	    public void numer_$eq(int);
 	    public void setNumer(int);
 	    public int denom();
