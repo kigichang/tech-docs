@@ -1,0 +1,278 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #737373;
+    background-color: white;
+    margin: 10px 13px 10px 13px;
+}
+table {
+	margin: 10px 0 15px 0;
+	border-collapse: collapse;
+}
+td,th {	
+	border: 1px solid #ddd;
+	padding: 3px 10px;
+}
+th {
+	padding: 5px 10px;	
+}
+
+a {
+    color: #0069d6;
+}
+a:hover {
+    color: #0050a3;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+p {
+    margin-bottom: 9px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #404040;
+    line-height: 36px;
+}
+h1 {
+    margin-bottom: 18px;
+    font-size: 30px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 13px;
+}
+hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+blockquote {
+    padding: 13px 13px 21px 15px;
+    margin-bottom: 18px;
+    font-family:georgia,serif;
+    font-style: italic;
+}
+blockquote:before {
+    content:"\201C";
+    font-size:40px;
+    margin-left:-10px;
+    font-family:georgia,serif;
+    color:#eee;
+}
+blockquote p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+code, pre {
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+}
+code {
+    background-color: #fee9cc;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+    line-height: 16px;
+    font-size: 11px;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    background-color: #fff;
+    color:#737373;
+    font-size: 11px;
+    padding: 0;
+}
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:10px auto;
+    }
+}
+@media print {
+	body,code,pre code,h1,h2,h3,h4,h5,h6 {
+		color: black;
+	}
+	table, pre {
+		page-break-inside: avoid;
+	}
+}
+</style>
+<title>Advantage：</title>
+
+</head>
+<body>
+<h1>PhantomJS</h1>
+
+<p>I crawl images in web page with PhantomJS and WebDriver. I summaries it below.</p>
+
+<p><a href="http://phantomjs.org/">PhantomJS</a></p>
+
+<p>PhantomJS is a headless web test tool with WebKit engine. It can handling javascript including AJAX.</p>
+
+<h3>Advantage：</h3>
+
+<ul>
+<li>Headless</li>
+<li>Fast</li>
+</ul>
+
+
+<h3>Disadvantage:</h3>
+
+<ul>
+<li>Ajax is not alawys OK, especially Lazy-Load</li>
+<li>CSS rendering is sometimes not the same with browser</li>
+</ul>
+
+
+<h3>Solution</h3>
+
+<p>We can use <a href="https://gist.github.com/cjoudrey/1341747">sample code of Christian Joudrey</a> on GitHub. It wait some time when downloading resources. Although it does not solve problem totally, it is better than using PhantomJS only.</p>
+
+<h2>PhantomJS with WebDriver</h2>
+
+<ul>
+<li>Install <a href="https://github.com/detro/ghostdriver">GhostDriver</a></li>
+<li><p>Edit <a href="https://gist.github.com/cjoudrey/1341747">twitter.js of Christian Joudrey</a></p>
+
+<pre><code>  var resourceWait  = 300,
+      maxRenderWait = 10000;
+
+  var page          = this, /* change to this for GhostDriver */
+      count         = 0,
+      forcedRenderTimeout,
+      renderTimeout;
+
+  page.viewportSize = { width: 1280,  height : 1024 };
+
+  function doRender() {
+
+  }
+
+  page.onResourceRequested = function (req) {
+      count += 1;
+      console.info('&gt; ' + req.id + ' - ' + req.url);
+      clearTimeout(renderTimeout);
+  };
+
+  page.onResourceReceived = function (res) {
+      if (!res.stage || res.stage === 'end') {
+          count -= 1;
+          console.info(res.id + ' ' + res.status + ' - ' + res.url);
+          if (count === 0) {
+              renderTimeout = setTimeout(doRender, resourceWait);
+          }
+      }
+  };
+</code></pre></li>
+<li><p>Scala Sample Code</p>
+
+<pre><code>  package phantom
+
+  import org.openqa.selenium.remote.DesiredCapabilities
+  import org.openqa.selenium.phantomjs.PhantomJSDriver
+  import java.util.concurrent.TimeUnit
+  import scala.collection.JavaConversions._
+  import org.apache.commons.lang3.StringUtils
+  import org.openqa.selenium.OutputType
+  import java.io.File
+  import org.apache.commons.io.FileUtils
+  import org.openqa.selenium.Dimension
+
+  object Phantom extends App {
+    val url = if (args.length &gt;= 1) args(0) else "http://test.tw"
+    val snapShotFile = if (args.length &gt;= 2) args(1) else "simple-phantom.jpg"
+    val dumpFile = if (args.length &gt;= 3) args(2) else "simple-phantom.html"
+
+
+    val capabilities = new DesiredCapabilities()
+    // Set PhantomJS Path
+    capabilities.setCapability("phantomjs.binary.path", "PHANTOM_HOME/bin/phantomjs")
+    val driver = new PhantomJSDriver(capabilities)
+
+    // execute modified codes of cjoudrey's twitter
+    val extra = scala.io.Source.fromFile("InitPhantom.js").getLines.mkString
+    driver.executePhantomJS(extra)
+
+    // crawl page
+    driver.get(url)
+
+    // find images in page
+    driver.findElementsByTagName("img").foreach(img =&gt; {
+      if (StringUtils.isNotBlank(img.getAttribute("src"))) {
+        val dim = img.getSize()
+        val pos = img.getLocation()
+        println(img.getAttribute("src"), pos.x, pos.y, dim.width, dim.height)
+      }
+    })
+
+    // generate a snapshot image
+    val shot: File = driver.getScreenshotAs(OutputType.FILE)
+    FileUtils.copyFile(shot, new File(snapShotFile))
+
+    // dump the result html code (contain the execution result of ajax)
+    val source = driver.getPageSource()
+    FileUtils.writeStringToFile(new File(dumpFile), source, "UTF-8")    
+    driver.close()
+    driver.quit() 
+  }
+</code></pre></li>
+</ul>
+
+</body>
+</html>
