@@ -1,0 +1,501 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Helvetica Neue", Helvetica, "Hiragino Sans GB", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    color: #737373;
+    background-color: white;
+    margin: 10px 13px 10px 13px;
+}
+table {
+	margin: 10px 0 15px 0;
+	border-collapse: collapse;
+}
+td,th {	
+	border: 1px solid #ddd;
+	padding: 3px 10px;
+}
+th {
+	padding: 5px 10px;	
+}
+
+a {
+    color: #0069d6;
+}
+a:hover {
+    color: #0050a3;
+    text-decoration: none;
+}
+a img {
+    border: none;
+}
+p {
+    margin-bottom: 9px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #404040;
+    line-height: 36px;
+}
+h1 {
+    margin-bottom: 18px;
+    font-size: 30px;
+}
+h2 {
+    font-size: 24px;
+}
+h3 {
+    font-size: 18px;
+}
+h4 {
+    font-size: 16px;
+}
+h5 {
+    font-size: 14px;
+}
+h6 {
+    font-size: 13px;
+}
+hr {
+    margin: 0 0 19px;
+    border: 0;
+    border-bottom: 1px solid #ccc;
+}
+blockquote {
+    padding: 13px 13px 21px 15px;
+    margin-bottom: 18px;
+    font-family:georgia,serif;
+    font-style: italic;
+}
+blockquote:before {
+    content:"\201C";
+    font-size:40px;
+    margin-left:-10px;
+    font-family:georgia,serif;
+    color:#eee;
+}
+blockquote p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 18px;
+    margin-bottom: 0;
+    font-style: italic;
+}
+code, pre {
+    font-family: Monaco, Andale Mono, Courier New, monospace;
+}
+code {
+    background-color: #fee9cc;
+    color: rgba(0, 0, 0, 0.75);
+    padding: 1px 3px;
+    font-size: 12px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+pre {
+    display: block;
+    padding: 14px;
+    margin: 0 0 18px;
+    line-height: 16px;
+    font-size: 11px;
+    border: 1px solid #d9d9d9;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+pre code {
+    background-color: #fff;
+    color:#737373;
+    font-size: 11px;
+    padding: 0;
+}
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:10px auto;
+    }
+}
+@media print {
+	body,code,pre code,h1,h2,h3,h4,h5,h6 {
+		color: black;
+	}
+	table, pre {
+		page-break-inside: avoid;
+	}
+}
+</style>
+<title>Java Access Level</title>
+
+</head>
+<body>
+<p>Scala 的 Access Level 觀念和 Java 差不多，但用法很大的不同，而且 Scala 給予的彈性比 Java 來得高，也因此更方便設計系統。</p>
+
+<h2>Java Access Level</h2>
+
+<p><a href="http://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html">資料來源</a></p>
+
+<p>Java 沒有宣告時(no explicit modifier)，是 <strong>package-private</strong>, 並非 <strong>public</strong> 這點要特別注意的。<strong>package-private</strong>是指可以在同 package 被存取，但 subclass 卻不行。</p>
+
+<p>由 <a href="http://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html">Java 說明文件</a>的表格，可以了解什麼是 <strong>package_private</strong></p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Modifier </th>
+<th align="center"> Class </th>
+<th align="center"> Package </th>
+<th align="center"> Subclass </th>
+<th align="center"> World</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">public </td>
+<td align="center"> Y </td>
+<td align="center"> Y </td>
+<td align="center"> Y </td>
+<td align="center"> Y</td>
+</tr>
+<tr>
+<td align="center">protected </td>
+<td align="center"> Y </td>
+<td align="center"> Y </td>
+<td align="center"> Y </td>
+<td align="center"> N</td>
+</tr>
+<tr>
+<td align="center">no modifier <br /> (<strong>package-private</strong>) </td>
+<td align="center"> Y </td>
+<td align="center"> Y </td>
+<td align="center"> N </td>
+<td align="center"> N</td>
+</tr>
+<tr>
+<td align="center">private </td>
+<td align="center"> Y </td>
+<td align="center"> N </td>
+<td align="center"> N </td>
+<td align="center"> N</td>
+</tr>
+</tbody>
+</table>
+
+
+<p><img src="http://docs.oracle.com/javase/tutorial/figures/java/classes-access.gif" title="實例" alt="實例" /></p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Modifier </th>
+<th align="center"> Alpha </th>
+<th align="center"> Beta </th>
+<th align="center"> AlphaSub </th>
+<th align="center"> Gamma</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">public </td>
+<td align="center"> Y </td>
+<td align="center"> Y </td>
+<td align="center"> Y </td>
+<td align="center"> Y</td>
+</tr>
+<tr>
+<td align="center">protected </td>
+<td align="center"> Y </td>
+<td align="center"> Y </td>
+<td align="center"> Y </td>
+<td align="center"> N</td>
+</tr>
+<tr>
+<td align="center">no modifier <br /> (<strong>package-private</strong>) </td>
+<td align="center"> Y </td>
+<td align="center"> Y </td>
+<td align="center"> N </td>
+<td align="center"> N</td>
+</tr>
+<tr>
+<td align="center">private </td>
+<td align="center"> Y </td>
+<td align="center"> N </td>
+<td align="center"> N </td>
+<td align="center"> N</td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>Scala Access Level 基本</h2>
+
+<p>仿造 Java 文件的上範例</p>
+
+<pre><code>package one {
+
+  class Alpha {
+    val a = 1
+    protected val b = 2
+    private val c = 3
+
+    def func() {
+      a
+      b
+      c
+    }
+  }
+
+
+  class Beta {
+    def test() {
+      val alpha = new Alpha()
+
+      alpha.a
+      alpha.b // error: value b in class Alpha cannot be accessed in one.Alpha Access to protected value b not permitted because enclosing class Beta in package one is not a subclass of class Alpha in package one where target is defined
+      alpha.c // error: value c in class Alpha cannot be accessed in one.Alpha
+
+    }
+  }
+}
+
+package two {
+
+  class AlphaSub extends one.Alpha {
+
+    def test() {
+      this.a
+      this.b
+      this.c // error: value c in class Alpha cannot be accessed in two.AlphaSub
+    }
+  }
+
+  class Gamma {
+    def test() {
+      val alpha = new one.Alpha
+
+      alpha.a
+      alpha.b // error: value b in class Alpha cannot be accessed in one.Alpha Access to protected value b not permitted because enclosing class Gamma in package two is not a subclass of class Alpha in package one where target is defined
+      alpha.c // error: value c in class Alpha cannot be accessed in one.Alpha
+
+    }
+
+  }
+
+}
+</code></pre>
+
+<p>由上面的範例可以整理出</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Modifier </th>
+<th align="center"> Alpha </th>
+<th align="center"> Beta </th>
+<th align="center"> AlphaSub </th>
+<th align="center"> Gamma</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">no modifier <br /> (<strong>public</strong>) </td>
+<td align="center"> Y </td>
+<td align="center"> Y </td>
+<td align="center"> Y </td>
+<td align="center"> Y</td>
+</tr>
+<tr>
+<td align="center">protected </td>
+<td align="center"> Y </td>
+<td align="center"> N </td>
+<td align="center"> Y </td>
+<td align="center"> N</td>
+</tr>
+<tr>
+<td align="center">private </td>
+<td align="center"> Y </td>
+<td align="center"> N </td>
+<td align="center"> N </td>
+<td align="center"> N</td>
+</tr>
+</tbody>
+</table>
+
+
+<p>Scala 沒有宣告的話，則是 <strong>public</strong>，與 Java (package-private) 不同。 <strong>protected</strong> 在 Scala 也與 Java 不同，在 Java 中，<strong>protected</strong> 可以被同 <strong>package</strong> 存取，但 Scala 不行。</p>
+
+<table>
+<thead>
+<tr>
+<th align="center">Modifier </th>
+<th align="center"> Scala </th>
+<th align="center"> Java</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">no modifier </td>
+<td align="center"> public </td>
+<td align="center"> package-private</td>
+</tr>
+<tr>
+<td align="center">protected </td>
+<td align="center"> 自己, subclass </td>
+<td align="center"> 自己, subclass, 同 package</td>
+</tr>
+</tbody>
+</table>
+
+
+<h2>Scala Access Level 進階</h2>
+
+<p>Scala 有比 Java 更彈性的 Access control，在 Scala 中，可以宣告 <code>modifier[package or class]</code> 的方式，ex: <code>private[one]</code>，來實作不同等級的 access control。</p>
+
+<h3>實作 Java Package-Private</h3>
+
+<p>修改上面的範例，在 <code>Alpha</code> 中新加 <code>private[one] val d = 4</code> 這個變數。這個變數的存取等級就同 Java 的 package-private，在同 package 可以被存取，但 subclass 卻不行。</p>
+
+<p>ex:</p>
+
+<pre><code>package one {
+
+  class Alpha {
+    val a = 1
+    protected val b = 2
+    private val c = 3
+
+    private[one] val d = 4 // package-private
+
+    def func() {
+      a
+      b
+      c
+      d
+    }
+  }
+
+
+  class Beta {
+    def test() {
+      val alpha = new Alpha()
+
+      alpha.a
+      alpha.b // error: value b in class Alpha cannot be accessed in one.Alpha Access to protected value b not permitted because enclosing class Beta in package one is not a subclass of class Alpha in package one where target is defined
+      alpha.c // error: value c in class Alpha cannot be accessed in one.Alpha
+
+      alpha.d
+    }
+  }
+}
+
+package two {
+
+  class AlphaSub extends one.Alpha {
+
+    def test() {
+      this.a
+      this.b
+      this.c // error: value c in class Alpha cannot be accessed in two.AlphaSub
+      this.d // error: value d in class Alpha cannot be accessed in two.AlphaSub
+    }
+  }
+
+  class Gamma {
+    def test() {
+      val alpha = new one.Alpha
+
+      alpha.a
+      alpha.b // error: value b in class Alpha cannot be accessed in one.Alpha Access to protected value b not permitted because enclosing class Gamma in package two is not a subclass of class Alpha in package one where target is defined
+      alpha.c // error: value c in class Alpha cannot be accessed in one.Alpha
+      alpha.d // error: value d in class Alpha cannot be accessed in one.Alpha
+    }
+
+  }
+
+}
+</code></pre>
+
+<h3>授與 Private Constructor 使用權</h3>
+
+<p>Java 的 private Constructor 常用在 Singleton，除了自身外，外界都無法使用。但 Scala 卻可以授與這項權力給指定的 package 或 class。</p>
+
+<p>以下是我自己寫的 Enumeration. 其中的 <code>final case class Planet private[Planets] (mass: Double, radius: Double) extends Val</code> 就是將 <code>Planet</code> 的 private constructor 授與 <code>Planets</code></p>
+
+<pre><code>object Planets extends Enumeration {
+
+  val G: Double = 6.67300E-11
+
+  final case class Planet private[Planets] (mass: Double, radius: Double) extends Val {
+    def surfaceGravity(): Double = G * mass / (radius * radius)
+    def surfaceWeight(otherMass: Double): Double = otherMass * surfaceGravity()
+  }
+
+  val Mercury = Planet(3.303e+23, 2.4397e6)
+  val Venus = Planet(4.869e+24, 6.0518e6)
+  val Earth = Planet(5.976e+24, 6.37814e6)
+  val Mars = Planet(6.421e+23, 3.3972e6)
+  val Jupiter = Planet(1.9e+27,   7.1492e7)
+  val Saturn = Planet(5.688e+26, 6.0268e7)
+  val Uranus = Planet(8.686e+25, 2.5559e7)
+  val Neptune = Planet(1.024e+26, 2.4746e7)
+
+
+  def main(args: Array[String]) {
+    require(args.length == 1, "Usage: java Planet &lt;earth_weight&gt;")
+
+    val earthWeight = args(0).toDouble  
+    val mass = earthWeight / Planets.Earth.surfaceGravity
+
+    Planets.values.foreach(p =&gt; println("Your weight on %s is %f%n".format(p, p.asInstanceOf[Planet].surfaceWeight(mass))))
+  }
+
+}
+</code></pre>
+
+<h3>限 Instance 存取</h3>
+
+<p>在 Scala 中，可以利用 <code>private[this]</code> 來限定只能是同 instance 才能存取，這項限制比 <code>private</code> 更加嚴格，這也許是 Scala 標榜平行運算下的產物。</p>
+
+<p>ex:</p>
+
+<pre><code>class TestPrivateThis {
+  private[this] val a = 10
+
+  def func(): Int = a + 10
+
+  def func(that: TestPrivateThis): Int = a + that.a // error: value a is not a member of TestPrivateThis
+}
+</code></pre>
+
+<h2>總結</h2>
+
+<p>Scala 在設計上，比較符合一般印象中的 access level，No modifier = public. protected 只能自己與 subclass 存取；且 Scala 比 Java 更為彈性。</p>
+</body>
+</html>

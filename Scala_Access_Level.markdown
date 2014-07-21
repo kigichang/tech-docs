@@ -4,7 +4,7 @@ Scala 的 Access Level 觀念和 Java 差不多，但用法很大的不同，而
 ## Java Access Level 
 [資料來源](http://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html)
 
-Java 沒有宣告時(no explicit modifier)，是 __package-prive__, 並非 __public__ 這點要特別注意的。__package-private__是指可以在同 package 被存取，但 subclass 卻不行。
+Java 沒有宣告時(no explicit modifier)，是 __package-private__, 並非 __public__ 這點要特別注意的。__package-private__是指可以在同 package 被存取，但 subclass 卻不行。
 
 由 [Java 說明文件](http://docs.oracle.com/javase/tutorial/java/javaOO/accesscontrol.html)的表格，可以了解什麼是 __package_private__
 
