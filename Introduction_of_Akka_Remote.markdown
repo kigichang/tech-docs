@@ -13,7 +13,7 @@ Lookup 是在遠端 Server，先啟動 Actor，再讓 Client 連線使用。這�
 
 ### Deployment
 
-顧名思意就是將 Local 端的 Actor，佈署到遠端的機器執行。
+顧名思意就是將 Local 端的 Actor，佈署到遠端的機器執行。在佈署執行環境時，還是需要將 Local 端的 Actor 放到 Remote 端。到時 Remote 端在執行時，會在自己的本機載入 Actor 來執行。
 
 
 ## Actor 基本運作
