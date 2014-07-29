@@ -11,7 +11,9 @@
 * [Scala Access Level](Scala_Access_Level.markdown)
 * Lazy
 
-
+# Akka
+* [Introduction of Akka](Introduction_of_Akka.markdown)
+* [Introduction of Akka Remote](Introduction_of_Akka_Remote.markdown)
 
 # PHP
 
