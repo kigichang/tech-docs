@@ -17,7 +17,7 @@ case let x where x.hasSuffix("pepper"):
     vegetableComment = "Is it a spicy \(x) ?"
     
 default:
-    vegetableComment = "Everythins tastes good in soup"
+    vegetableComment = "Everything tastes good in soup"
 }
 
 println(vegetableComment)
