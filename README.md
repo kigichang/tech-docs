@@ -27,3 +27,5 @@
 
 # iOS
 * [Swift Notes](swift_notes.markdown)
+* [Swift Language Guide - The Basics](swift_language_guide_the_basics.markdown)
+* [Swift Language Guide - Basic Operators](swift_language_guide_basic_operators.markdown)
