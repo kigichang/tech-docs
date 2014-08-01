@@ -26,6 +26,10 @@
 * Play
 
 # iOS
-* [Swift Notes](swift_notes.markdown)
-* [Swift Language Guide - The Basics](swift_language_guide_the_basics.markdown)
-* [Swift Language Guide - Basic Operators](swift_language_guide_basic_operators.markdown)
+* Swift
+	* [Notes](swift_notes.markdown)
+	* [The Basics](swift_language_guide_the_basics.markdown)
+	* [Basic Operators](swift_language_guide_basic_operators.markdown)
+	* [String and Characters](swift_language_guide_string_and_characters.markdown)
+	* [Collection](swift_language_guide_collection.markdown)
+	* [Switch](swift_language_guide_switch.markdown)
