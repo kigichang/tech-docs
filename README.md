@@ -23,7 +23,7 @@
 # WEB
 * [PhantomJS](phantomjs.markdown)
 * [Get Image Size via PhantomJS without GhostDriver](phantomjs_without_ghostdriver.markdown)
-* Play
+* [Play Framework Step by Step](Playframework.markdown)
 
 # iOS
 * Swift
