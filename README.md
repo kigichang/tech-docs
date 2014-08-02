@@ -15,6 +15,7 @@
 * [Introduction of Akka](Introduction_of_Akka.markdown)
 * [Introduction of Akka Remote](Introduction_of_Akka_Remote.markdown)
 * [Introduction of Akka Supervisor Strategy](Introduction_of_Akka_Supervisor_Strategy.markdown)
+* [Introduction of Akka Routing](Introduction_of_Akka_Routing.markdown)
 
 # PHP
 
