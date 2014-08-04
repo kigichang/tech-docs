@@ -34,3 +34,5 @@
 	* [String and Characters](swift_language_guide_string_and_characters.markdown)
 	* [Collection](swift_language_guide_collection.markdown)
 	* [Switch](swift_language_guide_switch.markdown)
+	* [Functions](swift_language_guide_functions.markdown)
+	* [Closure](swift_language_guide_closure.markdown)
