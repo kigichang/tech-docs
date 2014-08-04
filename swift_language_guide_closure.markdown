@@ -158,6 +158,27 @@ mySort(&a, >)
 myDump(a)
 ```
 
+### Closure on Assignment
+
+```
+let a: Int = { () -> Int in
+    return 10
+}()
+
+let b: Int = { (x: Int) -> Int in
+    return x + 20
+}(20)
+println(b)
+
+let c: Int = {
+    return $0 + 20
+}(20)
+println(c)
+
+let d: Int = { $0 + 20 }(20)
+println(20)
+```
+
 
 ## Trailing Closures
 
