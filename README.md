@@ -36,3 +36,4 @@
 	* [Switch](swift_language_guide_switch.markdown)
 	* [Functions](swift_language_guide_functions.markdown)
 	* [Closure](swift_language_guide_closure.markdown)
+	* [Class and Structure](swift_language_guid_class_and_structure.markdown)
