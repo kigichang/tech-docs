@@ -160,10 +160,14 @@ let threeOfSpades = Card(rank: Rank.Three, suit: Suit.Spades)
 println(threeOfSpades.desc())
 ```
 
-__“One of the most important differences between structures and classes is that structures are always copied when they are passed around in your code, but classes are passed by reference.”__
+__“One of the most important differences between structures and classes is that structures are always copied when they are passed around in your code, but classes are passed by reference value.”__
 
-* __Struct: _Pass by Value_ __
-* __Class: _Pass by Reference_ __
+~~* __Struct: _Pass by Value_ __~~
+
+~~* __Class: _Pass by Reference_ __~~
+
+Note: Like Java, Swift copy the reference value when class instance is assigned to variables or constant, or when passed to functions. Variables is passed by reference with `inout`.
+
 
 ## Protocol like Java Interface
 

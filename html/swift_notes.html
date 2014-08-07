@@ -325,7 +325,7 @@ case let x where x.hasSuffix("pepper"):
     vegetableComment = "Is it a spicy \(x) ?"
 
 default:
-    vegetableComment = "Everythins tastes good in soup"
+    vegetableComment = "Everything tastes good in soup"
 }
 
 println(vegetableComment)
@@ -467,13 +467,13 @@ let threeOfSpades = Card(rank: Rank.Three, suit: Suit.Spades)
 println(threeOfSpades.desc())
 </code></pre>
 
-<p><strong>“One of the most important differences between structures and classes is that structures are always copied when they are passed around in your code, but classes are passed by reference.”</strong></p>
+<p><strong>“One of the most important differences between structures and classes is that structures are always copied when they are passed around in your code, but classes are passed by reference value.”</strong></p>
 
-<ul>
-<li><strong>Struct: <em>Pass by Value</em> </strong></li>
-<li><strong>Class: <em>Pass by Reference</em> </strong></li>
-</ul>
+<p><del>* <strong>Struct: <em>Pass by Value</em> </strong></del></p>
 
+<p><del>* <strong>Class: <em>Pass by Reference</em> </strong></del></p>
+
+<p>Note: Like Java, Swift copy the reference value when class instance is assigned to variables or constant, or when passed to functions. Variables is passed by reference with <code>inout</code>.</p>
 
 <h2>Protocol like Java Interface</h2>
 
