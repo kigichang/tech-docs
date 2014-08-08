@@ -7,6 +7,7 @@ Instance Methods are functions in __Class__(`class`), __Structure__(`struct`) an
 
 * The first parameter in method is a local parameter name by default.
 * The __Second__ and __Subsequence__ parameters are local and __External__ names by default.
+* Use `_` before parameter to disable __External__ name
 * `self` is like `this` in Java
 
 	```
@@ -27,12 +28,19 @@ Instance Methods are functions in __Class__(`class`), __Structure__(`struct`) an
 	        self.x = x
 	        self.y = andY
 	    }
+	    
+	    func moveTo(x: Int, _ y: Int) {	<-- use _ to disable external name
+        	self.x = x
+        	self.y = y
+    	}
 	}
 	
 	
 	let point = Point(x: 10, y: 20)
 	println(point)
 	point.moveToX(30, andY: 40)		<-- invoke with external name
+	println(point)
+	point.moveTo(50, 60)
 	println(point)
 	```
 

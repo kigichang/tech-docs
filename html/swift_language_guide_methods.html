@@ -315,6 +315,7 @@ sup {
 <ul>
 <li>The first parameter in method is a local parameter name by default.</li>
 <li>The <strong>Second</strong> and <strong>Subsequence</strong> parameters are local and <strong>External</strong> names by default.</li>
+<li>Use <code>_</code> before parameter to disable <strong>External</strong> name</li>
 <li><p><code>self</code> is like <code>this</code> in Java</p>
 
 <pre><code>  class Point : Printable {
@@ -334,12 +335,19 @@ sup {
           self.x = x
           self.y = andY
       }
+
+      func moveTo(x: Int, _ y: Int) { &lt;-- use _ to disable external name
+          self.x = x
+          self.y = y
+      }
   }
 
 
   let point = Point(x: 10, y: 20)
   println(point)
   point.moveToX(30, andY: 40)     &lt;-- invoke with external name
+  println(point)
+  point.moveTo(50, 60)
   println(point)
 </code></pre></li>
 </ul>
