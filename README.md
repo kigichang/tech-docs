@@ -38,3 +38,8 @@
 	* [Closure](swift_language_guide_closure.markdown)
 	* [Class and Structure](swift_language_guid_class_and_structure.markdown)
 	* [Value and Reference Type](swift_language_guide_value_and_reference_type.markdown)
+	* [Properties](swift_language_guide_properties.markdown)
+	* [Type Properties and Methods](swift_language_guide_type_property_and_methods.markdown)
+	* [Subscripts](swift_language_guide_subscripts.markdown)
+	* [Methods](swift_language_guide_methods.markdown)
+	* [Inheritance](swift_language_guide_inheritance.markdown)
