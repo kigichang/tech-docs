@@ -516,7 +516,7 @@ let white = Color(red: 255.0, green: 255.0, blue: 255.0)    &lt;-- OK
 
   println("(\(c1.red), \(c1.green), \(c1.blue), \(c1.alpha))")    &lt;-- (128.0, 128.0, 128.0, 255.0)
 </code></pre></li>
-<li><p>MUST use <em>Designated</em> initializer of superclass in <em>Designated</em> one of subclass</p>
+<li><p>Subclass <strong>MUST</strong> use <em>Designated</em> initializer of superclass in its initializers.</p>
 
 <pre><code>  class Color {
       let red = 0.0, green = 0.0, blue = 0.0
@@ -546,6 +546,64 @@ let white = Color(red: 255.0, green: 255.0, blue: 255.0)    &lt;-- OK
   let c1 = AlphaColor(alpha: 128.0)
 
   println("(\(c1.red), \(c1.green), \(c1.blue), \(c1.alpha))")    &lt;-- (0.0, 0.0, 0.0, 128.0)
+</code></pre>
+
+<pre><code>  class Color {
+      let red = 0.0
+      var green = 0.0, blue = 0.0
+
+      init(red: Double, green: Double, blue: Double) {
+          self.red = red
+          self.green = green
+          self.blue = blue
+      }
+
+      convenience init() {
+          self.init(red: 128.0, green: 128.0, blue: 128.0)
+
+      }
+
+  }
+
+  class AlphaColor : Color {
+      let alpha = 255.0
+
+      init(alpha: Double) {
+          super.init()            &lt;-- Error, invoke convience initializers of superclass
+          self.alpha = alpha
+      }
+  }
+</code></pre>
+
+<pre><code>  class Color {
+      let red = 0.0
+      var green = 0.0, blue = 0.0
+
+      init(red: Double, green: Double, blue: Double) {
+          self.red = red
+          self.green = green
+          self.blue = blue
+      }
+
+      convenience init() {
+          self.init(red: 128.0, green: 128.0, blue: 128.0)
+
+      }
+
+  }
+
+  class AlphaColor : Color {
+      let alpha = 255.0
+
+      init(alpha: Double) {
+          super.init(red: 0.0, green: 0.0, blue: 0.0)
+          self.alpha = alpha
+      }
+
+      convenience init() {
+          super.init()    &lt;-- Error, Must invoke designdated initializers of superclass
+      }
+  }
 </code></pre></li>
 </ul>
 

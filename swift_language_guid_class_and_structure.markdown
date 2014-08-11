@@ -209,7 +209,7 @@ __Use Cases__
 	println("(\(c1.red), \(c1.green), \(c1.blue), \(c1.alpha))")	<-- (128.0, 128.0, 128.0, 255.0)
 	```
 
-* MUST use _Designated_ initializer of superclass in _Designated_ one of subclass
+* Subclass __MUST__ use _Designated_ initializer of superclass in its initializers.
 
 	```
 	class Color {
@@ -242,5 +242,66 @@ __Use Cases__
 	println("(\(c1.red), \(c1.green), \(c1.blue), \(c1.alpha))")	<-- (0.0, 0.0, 0.0, 128.0)
 	```
 
+	```
+	class Color {
+	    let red = 0.0
+	    var green = 0.0, blue = 0.0
+	    
+	    init(red: Double, green: Double, blue: Double) {
+	        self.red = red
+	        self.green = green
+	        self.blue = blue
+	    }
+	    
+	    convenience init() {
+	        self.init(red: 128.0, green: 128.0, blue: 128.0)
+	        
+	    }
+	    
+	}
+	
+	class AlphaColor : Color {
+	    let alpha = 255.0
+	    
+	    init(alpha: Double) {
+	        super.init()			<-- Error, invoke convience initializers of superclass
+	        self.alpha = alpha
+	    }
+	}
+	
+	```
+	
+	```
+	class Color {
+	    let red = 0.0
+	    var green = 0.0, blue = 0.0
+	    
+	    init(red: Double, green: Double, blue: Double) {
+	        self.red = red
+	        self.green = green
+	        self.blue = blue
+	    }
+	    
+	    convenience init() {
+	        self.init(red: 128.0, green: 128.0, blue: 128.0)
+	        
+	    }
+	    
+	}
+	
+	class AlphaColor : Color {
+	    let alpha = 255.0
+	    
+	    init(alpha: Double) {
+	        super.init(red: 0.0, green: 0.0, blue: 0.0)
+	        self.alpha = alpha
+	    }
+	    
+	    convenience init() {
+	        super.init()	<-- Error, Must invoke designdated initializers of superclass
+	    }
+	}
+	
+	```
 
 
