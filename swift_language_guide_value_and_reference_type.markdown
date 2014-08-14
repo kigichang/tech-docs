@@ -14,7 +14,7 @@
 
 * Class (`class`)
 * Function Type (`(parameter) -> (return type)`)
-* Closure (`{ (parameter) in statements }`)
+* Closure (`{ (parameter) -> (return type) in statements }`)
 
 
 ## Behavior
