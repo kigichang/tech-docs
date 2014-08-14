@@ -1,5 +1,8 @@
 # Swift Language Guide - Properties
 
+* Constant Value Type is mean the constant value, so you can __NOT__ modify any properties in it.
+* Constant Reference Type is mean the constant reference value, you can __NOT__ assign a new instance to it, but you can modify variable properties in it. The constant properties can __NOT__ be modified as usual.
+
 ## Stored Properties
 
 Stored Property is a __Constant__ or __Variable__ stored as part of an __Instance__ of a particular __Class__ or __Structure__.
@@ -22,7 +25,7 @@ Stored Property is a __Constant__ or __Variable__ stored as part of an __Instanc
 	
 	```
 
-* Can __NOT__ modify any stored properties of __Constant Instance__, even the stored property is a __Variable__.
+* Can __NOT__ modify any stored properties of  ~~__Constant Instance__~~ __Constant Value Type__ (like structure), even the stored property is a __Variable__.
 
 	```
 	struct Point {
@@ -38,6 +41,22 @@ Stored Property is a __Constant__ or __Variable__ stored as part of an __Instanc
 	let point = Point(x: 30, y: 30)		<-- assign as Constant
 	
 	point.x = 200	<-- Error, Can NOT change variable stored property of an Constant instance
+	```
+	
+	```
+	class Point {
+	    var x = 0, y = 0    <-- Variable stored properties
+	
+	    init(x: Int, y: Int) {
+	        self.x = x
+	        self.y = y
+	    }
+	}
+	
+	
+	let point = Point(x: 30, y: 30)     <-- assign as Constant
+	
+	point.x = 200   <-- OK
 	```
 
 ### Lazy Load

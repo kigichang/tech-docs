@@ -308,6 +308,12 @@ sup {
 <body>
 <h1>Swift Language Guide - Properties</h1>
 
+<ul>
+<li>Constant Value Type is mean the constant value, so you can <strong>NOT</strong> modify any properties in it.</li>
+<li>Constant Reference Type is mean the constant reference value, you can <strong>NOT</strong> assign a new instance to it, but you can modify variable properties in it. The constant properties can <strong>NOT</strong> be modified as usual.</li>
+</ul>
+
+
 <h2>Stored Properties</h2>
 
 <p>Stored Property is a <strong>Constant</strong> or <strong>Variable</strong> stored as part of an <strong>Instance</strong> of a particular <strong>Class</strong> or <strong>Structure</strong>.</p>
@@ -328,7 +334,7 @@ sup {
 
   let point = Point(x: 30, y: 30)
 </code></pre></li>
-<li><p>Can <strong>NOT</strong> modify any stored properties of <strong>Constant Instance</strong>, even the stored property is a <strong>Variable</strong>.</p>
+<li><p>Can <strong>NOT</strong> modify any stored properties of  <del><strong>Constant Instance</strong></del> <strong>Constant Value Type</strong> (like structure), even the stored property is a <strong>Variable</strong>.</p>
 
 <pre><code>  struct Point {
       var x = 0, y = 0    &lt;-- Variable stored properties
@@ -343,6 +349,21 @@ sup {
   let point = Point(x: 30, y: 30)     &lt;-- assign as Constant
 
   point.x = 200   &lt;-- Error, Can NOT change variable stored property of an Constant instance
+</code></pre>
+
+<pre><code>  struct Point {
+      var x = 0, y = 0    &lt;-- Variable stored properties
+
+      init(x: Int, y: Int) {
+          self.x = x
+          self.y = y
+      }
+  }
+
+
+  let point = Point(x: 30, y: 30)     &lt;-- assign as Constant
+
+  point.x = 200   &lt;-- OK
 </code></pre></li>
 </ul>
 
