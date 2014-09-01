@@ -340,7 +340,7 @@ scala&gt;
 <ul>
 <li><p>Extractor 只要有實作 <code>unapply</code> or <code>unapplySeq</code> 即可；但如果 Extractor 沒有實作 <code>apply</code>, 則 <code>unapply</code> 回傳型別必須是 <code>Boolean</code>。</p>
 
-<p>  <code>unapplySeq</code> 是用在 <strong>variable argument</strong> 也就是類似 <code>func(lst: String*)</code><del>，可以不實作 <code>apply</code> 也會有 <code>apply</code> 的效果</del>。</p></li>
+<p>  <code>unapplySeq</code> 是用在 <strong>variable argument</strong> 也就是類似 <code>func(lst: String*)</code>，可以不實作 <code>apply</code> 也會有 <code>apply</code> 的效果。</p></li>
 <li><p>Extractor 可以是 <code>object</code> or <code>class</code>。<code>class</code> 可以存當時的條件，但 <code>object</code> 則沒有這樣的效果 (因為 object 是 singleton，無法存每次不同的比對條件)</p></li>
 </ul>
 

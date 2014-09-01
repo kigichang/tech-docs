@@ -28,7 +28,7 @@ scala>
 
 * Extractor 只要有實作 `unapply` or `unapplySeq` 即可；但如果 Extractor 沒有實作 `apply`, 則 `unapply` 回傳型別必須是 `Boolean`。
 
-	`unapplySeq` 是用在 __variable argument__ 也就是類似 `func(lst: String*)`~~，可以不實作 `apply` 也會有 `apply` 的效果~~。
+	`unapplySeq` 是用在 __variable argument__ 也就是類似 `func(lst: String*)`，可以不實作 `apply` 也會有 `apply` 的效果。
 
 
 * Extractor 可以是 `object` or `class`。`class` 可以存當時的條件，但 `object` 則沒有這樣的效果 (因為 object 是 singleton，無法存每次不同的比對條件)
