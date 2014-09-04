@@ -172,6 +172,7 @@ mkdir -p src/test/scala
   </dependencies>
 
   <build>
+   <pluginManagement>
     <plugins>
       <!-- Java Compiler -->
       <plugin>
@@ -252,6 +253,7 @@ mkdir -p src/test/scala
         </executions>
       </plugin>
     </plugins>
+   </pluginManagement> 
   </build>
 
   <reporting>
