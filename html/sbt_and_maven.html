@@ -1,0 +1,1090 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<style>
+body {
+  font-family: Helvetica, arial, sans-serif;
+  font-size: 14px;
+  line-height: 1.6;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: white;
+  padding: 30px; }
+
+body > *:first-child {
+  margin-top: 0 !important; }
+body > *:last-child {
+  margin-bottom: 0 !important; }
+
+a {
+  color: #4183C4; }
+a.absent {
+  color: #cc0000; }
+a.anchor {
+  display: block;
+  padding-left: 30px;
+  margin-left: -30px;
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 20px 0 10px;
+  padding: 0;
+  font-weight: bold;
+  -webkit-font-smoothing: antialiased;
+  cursor: text;
+  position: relative; }
+
+h1:hover a.anchor, h2:hover a.anchor, h3:hover a.anchor, h4:hover a.anchor, h5:hover a.anchor, h6:hover a.anchor {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA09pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoMTMuMCAyMDEyMDMwNS5tLjQxNSAyMDEyLzAzLzA1OjIxOjAwOjAwKSAgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUM2NjlDQjI4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUM2NjlDQjM4ODBGMTFFMTg1ODlEODNERDJBRjUwQTQiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo5QzY2OUNCMDg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo5QzY2OUNCMTg4MEYxMUUxODU4OUQ4M0REMkFGNTBBNCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PsQhXeAAAABfSURBVHjaYvz//z8DJYCRUgMYQAbAMBQIAvEqkBQWXI6sHqwHiwG70TTBxGaiWwjCTGgOUgJiF1J8wMRAIUA34B4Q76HUBelAfJYSA0CuMIEaRP8wGIkGMA54bgQIMACAmkXJi0hKJQAAAABJRU5ErkJggg==) no-repeat 10px center;
+  text-decoration: none; }
+
+h1 tt, h1 code {
+  font-size: inherit; }
+
+h2 tt, h2 code {
+  font-size: inherit; }
+
+h3 tt, h3 code {
+  font-size: inherit; }
+
+h4 tt, h4 code {
+  font-size: inherit; }
+
+h5 tt, h5 code {
+  font-size: inherit; }
+
+h6 tt, h6 code {
+  font-size: inherit; }
+
+h1 {
+  font-size: 28px;
+  color: black; }
+
+h2 {
+  font-size: 24px;
+  border-bottom: 1px solid #cccccc;
+  color: black; }
+
+h3 {
+  font-size: 18px; }
+
+h4 {
+  font-size: 16px; }
+
+h5 {
+  font-size: 14px; }
+
+h6 {
+  color: #777777;
+  font-size: 14px; }
+
+p, blockquote, ul, ol, dl, li, table, pre {
+  margin: 15px 0; }
+
+hr {
+  background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAECAYAAACtBE5DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMC1jMDYwIDYxLjEzNDc3NywgMjAxMC8wMi8xMi0xNzozMjowMCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNSBNYWNpbnRvc2giIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OENDRjNBN0E2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OENDRjNBN0I2NTZBMTFFMEI3QjRBODM4NzJDMjlGNDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo4Q0NGM0E3ODY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo4Q0NGM0E3OTY1NkExMUUwQjdCNEE4Mzg3MkMyOUY0OCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PqqezsUAAAAfSURBVHjaYmRABcYwBiM2QSA4y4hNEKYDQxAEAAIMAHNGAzhkPOlYAAAAAElFTkSuQmCC) repeat-x 0 0;
+  border: 0 none;
+  color: #cccccc;
+  height: 4px;
+  padding: 0;
+}
+
+body > h2:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+body > h1:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+  body > h1:first-child + h2 {
+    margin-top: 0;
+    padding-top: 0; }
+body > h3:first-child, body > h4:first-child, body > h5:first-child, body > h6:first-child {
+  margin-top: 0;
+  padding-top: 0; }
+
+a:first-child h1, a:first-child h2, a:first-child h3, a:first-child h4, a:first-child h5, a:first-child h6 {
+  margin-top: 0;
+  padding-top: 0; }
+
+h1 p, h2 p, h3 p, h4 p, h5 p, h6 p {
+  margin-top: 0; }
+
+li p.first {
+  display: inline-block; }
+li {
+  margin: 0; }
+ul, ol {
+  padding-left: 30px; }
+
+ul :first-child, ol :first-child {
+  margin-top: 0; }
+
+dl {
+  padding: 0; }
+  dl dt {
+    font-size: 14px;
+    font-weight: bold;
+    font-style: italic;
+    padding: 0;
+    margin: 15px 0 5px; }
+    dl dt:first-child {
+      padding: 0; }
+    dl dt > :first-child {
+      margin-top: 0; }
+    dl dt > :last-child {
+      margin-bottom: 0; }
+  dl dd {
+    margin: 0 0 15px;
+    padding: 0 15px; }
+    dl dd > :first-child {
+      margin-top: 0; }
+    dl dd > :last-child {
+      margin-bottom: 0; }
+
+blockquote {
+  border-left: 4px solid #dddddd;
+  padding: 0 15px;
+  color: #777777; }
+  blockquote > :first-child {
+    margin-top: 0; }
+  blockquote > :last-child {
+    margin-bottom: 0; }
+
+table {
+  padding: 0;border-collapse: collapse; }
+  table tr {
+    border-top: 1px solid #cccccc;
+    background-color: white;
+    margin: 0;
+    padding: 0; }
+    table tr:nth-child(2n) {
+      background-color: #f8f8f8; }
+    table tr th {
+      font-weight: bold;
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr td {
+      border: 1px solid #cccccc;
+      margin: 0;
+      padding: 6px 13px; }
+    table tr th :first-child, table tr td :first-child {
+      margin-top: 0; }
+    table tr th :last-child, table tr td :last-child {
+      margin-bottom: 0; }
+
+img {
+  max-width: 100%; }
+
+span.frame {
+  display: block;
+  overflow: hidden; }
+  span.frame > span {
+    border: 1px solid #dddddd;
+    display: block;
+    float: left;
+    overflow: hidden;
+    margin: 13px 0 0;
+    padding: 7px;
+    width: auto; }
+  span.frame span img {
+    display: block;
+    float: left; }
+  span.frame span span {
+    clear: both;
+    color: #333333;
+    display: block;
+    padding: 5px 0 0; }
+span.align-center {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-center > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: center; }
+  span.align-center span img {
+    margin: 0 auto;
+    text-align: center; }
+span.align-right {
+  display: block;
+  overflow: hidden;
+  clear: both; }
+  span.align-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px 0 0;
+    text-align: right; }
+  span.align-right span img {
+    margin: 0;
+    text-align: right; }
+span.float-left {
+  display: block;
+  margin-right: 13px;
+  overflow: hidden;
+  float: left; }
+  span.float-left span {
+    margin: 13px 0 0; }
+span.float-right {
+  display: block;
+  margin-left: 13px;
+  overflow: hidden;
+  float: right; }
+  span.float-right > span {
+    display: block;
+    overflow: hidden;
+    margin: 13px auto 0;
+    text-align: right; }
+
+code, tt {
+  margin: 0 2px;
+  padding: 0 5px;
+  white-space: nowrap;
+  border: 1px solid #eaeaea;
+  background-color: #f8f8f8;
+  border-radius: 3px; }
+
+pre code {
+  margin: 0;
+  padding: 0;
+  white-space: pre;
+  border: none;
+  background: transparent; }
+
+.highlight pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+
+pre {
+  background-color: #f8f8f8;
+  border: 1px solid #cccccc;
+  font-size: 13px;
+  line-height: 19px;
+  overflow: auto;
+  padding: 6px 10px;
+  border-radius: 3px; }
+  pre code, pre tt {
+    background-color: transparent;
+    border: none; }
+
+sup {
+    font-size: 0.83em;
+    vertical-align: super;
+    line-height: 0;
+}
+* {
+	-webkit-print-color-adjust: exact;
+}
+@media screen and (min-width: 914px) {
+    body {
+        width: 854px;
+        margin:0 auto;
+    }
+}
+@media print {
+	table, pre {
+		page-break-inside: avoid;
+	}
+	pre {
+		word-wrap: break-word;
+	}
+}
+</style>
+<title>SBT and Maven</title>
+
+</head>
+<body>
+<h1>SBT and Maven</h1>
+
+<h2>Maven</h2>
+
+<h3>相關資料</h3>
+
+<ul>
+<li><a href="http://maven.apache.org/what-is-maven.html">What is Maven</a></li>
+<li><a href="http://www.sonatype.com/resources/books">Sonatype Books</a></li>
+<li><a href="http://www.codedata.com.tw/java/understanding-gradle-1-ant/">【認識 Gradle】（1）講古的時間 Apache Ant</a></li>
+<li><a href="http://www.codedata.com.tw/java/understanding-gradle-2-maven/">【認識 Gradle】（2）講古的時間 Apache Maven</a></li>
+</ul>
+
+
+<h3>Maven 核心概念 Build Life Cycle(Phase) and Plugins(Goal)</h3>
+
+<ul>
+<li>Maven 定義專案 build 的步驟 (Phase)</li>
+<li>Maven 使用 plugin 來完成相關的工作 (Goal)</li>
+<li>使用 pom.xml 來設定相依性，以及每個 phase 需要使用那些 plugin 的功能</li>
+<li><a href="http://books.sonatype.com/mvnex-book/reference/simple-project-sect-simple-core.html">Maven Core Concepts</a></li>
+</ul>
+
+
+<p><img src="http://books.sonatype.com/mvnex-book/reference/figs/web/simple-project_lifecyclebinding.png" alt="Core Concepts" /></p>
+
+<ul>
+<li>Maven 的指令，有帶 <code>:</code> 的，就是使用 plugin 內建的功能，Ex: <code>mvn eclipse:eclipse</code>。沒有的話，就是要執行 Build Phase，ex: <code>mvn package</code></li>
+</ul>
+
+
+<h3>如何產出最簡單的專案並結合 Scala</h3>
+
+<ul>
+<li><p>使用 maven 指令產出專案基本目錄與檔案</p>
+
+<ol>
+<li><p> command:</p>
+
+<pre><code>  mvn archetype:generate
+</code></pre></li>
+<li> choose archetype: 397</li>
+<li> choose archetype version number: 6</li>
+<li> project groupId: com.bridgewell.demo (maven repository groupId)</li>
+<li> project artifactId: single_demo (proejct folder) (maven repository artifactId)</li>
+<li> project version: 1.0-SNAPSHOT (proejct version) (maven respository version)</li>
+<li> project package: com.bridgewell.demo.maven.single</li>
+</ol>
+</li>
+<li><p>目錄與檔案結構</p></li>
+</ul>
+
+
+<pre><code>.
+|____single_demo
+  |____pom.xml
+  |____src
+    |____main
+    | |____java
+    |   |____com
+    |     |____bridgewell
+    |       |____demo
+    |         |____maven
+    |           |____single
+    |             |____App.java
+    |____test
+      |____java
+        |____com
+          |____bridgewell
+            |____demo
+              |____maven
+                |____single
+                  |____AppTest.java
+</code></pre>
+
+<ul>
+<li>Maven POM File
+pom.xml 中的 <code>&lt;packaging&gt;jar&lt;/packaging&gt;</code> 是指專案要打包成那種型態，一般是 <code>jar</code>。如果是要寫網站，則是 <code>war</code>。如果是母/子專案，則是 <code>pom</code></li>
+</ul>
+
+
+<pre><code>&lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+  &lt;groupId&gt;com.bridgewell.demo&lt;/groupId&gt;
+  &lt;artifactId&gt;single_demo&lt;/artifactId&gt;
+  &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+  &lt;packaging&gt;jar&lt;/packaging&gt;
+
+  &lt;name&gt;single_demo&lt;/name&gt;
+  &lt;url&gt;http://maven.apache.org&lt;/url&gt;
+
+  &lt;properties&gt;
+    &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+  &lt;/properties&gt;
+
+  &lt;dependencies&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;junit&lt;/groupId&gt;
+      &lt;artifactId&gt;junit&lt;/artifactId&gt;
+      &lt;version&gt;3.8.1&lt;/version&gt;
+      &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+  &lt;/dependencies&gt;
+&lt;/project&gt;
+</code></pre>
+
+<ul>
+<li>新加 Scala Source code 目錄</li>
+</ul>
+
+
+<pre><code>mkdir -p src/main/scala
+mkdir -p src/test/scala
+</code></pre>
+
+<pre><code>.
+|____pom.xml
+|____src
+  |____main
+  | |____java
+  | | |____com
+  | |   |____bridgewell
+  | |     |____demo
+  | |       |____maven
+  | |         |____single
+  | |           |____App.java
+  | |____scala
+  |____test
+    |____java
+    | |____com
+    |   |____bridgewell
+    |     |____demo
+    |       |____maven
+    |         |____single
+    |           |____AppTest.java
+    |____scala
+</code></pre>
+
+<h3>常用的 plugin 整理</h3>
+
+<ul>
+<li>maven-compiler-plugin</li>
+<li>scala-maven-plugin</li>
+<li>maven-dependency-plugin</li>
+<li>maven-assembly-plugin</li>
+<li>maven-scala-plugin</li>
+</ul>
+
+
+<p>已加到 pom.xml，到時候用 copy&amp;paste 就好</p>
+
+<pre><code>&lt;project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"&gt;
+  &lt;modelVersion&gt;4.0.0&lt;/modelVersion&gt;
+
+  &lt;groupId&gt;com.bridgewell.demo&lt;/groupId&gt;
+  &lt;artifactId&gt;single_demo&lt;/artifactId&gt;
+  &lt;version&gt;1.0-SNAPSHOT&lt;/version&gt;
+  &lt;packaging&gt;jar&lt;/packaging&gt;
+
+  &lt;name&gt;single_demo&lt;/name&gt;
+  &lt;url&gt;http://maven.apache.org&lt;/url&gt;
+
+  &lt;properties&gt;
+    &lt;project.build.sourceEncoding&gt;UTF-8&lt;/project.build.sourceEncoding&gt;
+    &lt;jdk.version&gt;1.7&lt;/jdk.version&gt;
+  &lt;/properties&gt;
+
+  &lt;dependencies&gt;
+    &lt;dependency&gt;
+      &lt;groupId&gt;junit&lt;/groupId&gt;
+      &lt;artifactId&gt;junit&lt;/artifactId&gt;
+      &lt;version&gt;3.8.1&lt;/version&gt;
+      &lt;scope&gt;test&lt;/scope&gt;
+    &lt;/dependency&gt;
+
+    &lt;dependency&gt;
+      &lt;groupId&gt;org.scala-lang&lt;/groupId&gt;
+      &lt;artifactId&gt;scala-library&lt;/artifactId&gt;
+      &lt;version&gt;2.10.4&lt;/version&gt;
+    &lt;/dependency&gt;
+
+  &lt;/dependencies&gt;
+
+  &lt;build&gt;
+   &lt;pluginManagement&gt;
+    &lt;plugins&gt;
+      &lt;!-- Java Compiler --&gt;
+      &lt;plugin&gt;
+        &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+        &lt;artifactId&gt;maven-compiler-plugin&lt;/artifactId&gt;
+        &lt;version&gt;3.1&lt;/version&gt;
+        &lt;configuration&gt;
+          &lt;source&gt;${jdk.version}&lt;/source&gt;
+          &lt;target&gt;${jdk.version}&lt;/target&gt;
+          &lt;encoding&gt;${project.build.sourceEncoding}&lt;/encoding&gt;
+        &lt;/configuration&gt;
+      &lt;/plugin&gt;
+
+      &lt;!-- Scala Compiler --&gt;
+      &lt;plugin&gt;
+        &lt;groupId&gt;net.alchim31.maven&lt;/groupId&gt;
+        &lt;artifactId&gt;scala-maven-plugin&lt;/artifactId&gt;
+        &lt;version&gt;3.1.6&lt;/version&gt;
+        &lt;executions&gt;
+          &lt;execution&gt;
+            &lt;id&gt;scala-compile-first&lt;/id&gt;
+            &lt;phase&gt;process-resources&lt;/phase&gt;
+            &lt;goals&gt;
+              &lt;goal&gt;add-source&lt;/goal&gt;
+              &lt;goal&gt;compile&lt;/goal&gt;
+            &lt;/goals&gt;
+          &lt;/execution&gt;
+          &lt;execution&gt;
+            &lt;id&gt;scala-test-compile&lt;/id&gt;
+            &lt;phase&gt;process-test-resources&lt;/phase&gt;
+            &lt;goals&gt;
+              &lt;goal&gt;testCompile&lt;/goal&gt;
+            &lt;/goals&gt;
+          &lt;/execution&gt;
+        &lt;/executions&gt;
+        &lt;!-- 可再指定要用那個 scala 版本，不設定，會預設找 org.scala-lang 版本
+        &lt;configuration&gt;
+          &lt;scalaVersion&gt;2.10.4&lt;/scalaVersion&gt;
+        &lt;/configuration&gt; --&gt;
+      &lt;/plugin&gt;
+
+      &lt;!-- copy dependency / 將有用到的 dependency library copy 到指定的目錄，方便 deploy --&gt;
+      &lt;plugin&gt;
+        &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+        &lt;artifactId&gt;maven-dependency-plugin&lt;/artifactId&gt;
+        &lt;version&gt;2.8&lt;/version&gt;
+        &lt;executions&gt;
+          &lt;execution&gt;
+            &lt;phase&gt;package&lt;/phase&gt;
+            &lt;goals&gt;
+                &lt;goal&gt;copy-dependencies&lt;/goal&gt;
+            &lt;/goals&gt;
+            &lt;configuration&gt;
+              &lt;outputDirectory&gt;${project.build.directory}/lib&lt;/outputDirectory&gt;
+            &lt;/configuration&gt;
+          &lt;/execution&gt;
+        &lt;/executions&gt;
+      &lt;/plugin&gt;
+
+      &lt;!-- assembly / 將有用到的 dependency library 與專案的程式，全部打包成一個 jar 檔--&gt;
+      &lt;plugin&gt;
+        &lt;groupId&gt;org.apache.maven.plugins&lt;/groupId&gt;
+        &lt;artifactId&gt;maven-assembly-plugin&lt;/artifactId&gt;
+        &lt;version&gt;2.4&lt;/version&gt;
+        &lt;configuration&gt;
+          &lt;descriptorRefs&gt;
+            &lt;descriptorRef&gt;jar-with-dependencies&lt;/descriptorRef&gt;
+          &lt;/descriptorRefs&gt;
+        &lt;/configuration&gt;
+        &lt;executions&gt;
+          &lt;execution&gt;
+            &lt;id&gt;make-assembly&lt;/id&gt;
+            &lt;phase&gt;package&lt;/phase&gt;
+            &lt;goals&gt;
+              &lt;goal&gt;single&lt;/goal&gt;
+            &lt;/goals&gt;
+          &lt;/execution&gt;
+        &lt;/executions&gt;
+      &lt;/plugin&gt;
+    &lt;/plugins&gt;
+   &lt;/pluginManagement&gt; 
+  &lt;/build&gt;
+
+  &lt;reporting&gt;
+    &lt;plugins&gt;
+      &lt;!-- scala doc --&gt;
+      &lt;plugin&gt;
+        &lt;groupId&gt;org.scala-tools&lt;/groupId&gt;
+        &lt;artifactId&gt;maven-scala-plugin&lt;/artifactId&gt;
+      &lt;/plugin&gt;
+    &lt;/plugins&gt;
+  &lt;/reporting&gt;
+
+&lt;/project&gt;
+</code></pre>
+
+<h3>常用指令</h3>
+
+<ul>
+<li><code>mvn compile</code> 編譯程式</li>
+<li><code>mvn clean</code> 清除編譯好的檔案</li>
+<li><code>mvn test</code> Unit Test</li>
+<li><code>mvn package</code> 打包專案</li>
+<li><code>mvn install</code> 將專案的 jar 安裝到 local respository</li>
+<li><code>mvn scala:doc</code> Scala Doc</li>
+<li><code>mvn scala:console</code> 進入 Scala Interactive Interpreter (REPL)。類似 <code>sbt console</code></li>
+<li><code>mvn eclipse:eclipse</code> 產生出 Eclipse 的專案檔。可以用 Eclipse import 專案。(註)</li>
+</ul>
+
+
+<p><strong>註：Eclipse 有 m2e 的 plugin，可以直接 import maven 專案，但 m2e 在專案開發時，不是很好用。所以我都轉成 eclipse 專案檔，再 import</strong></p>
+
+<h2>SBT</h2>
+
+<h3>相關資料</h3>
+
+<ul>
+<li><a href="http://www.scala-sbt.org/release/docs/index.html">SBT Doc</a></li>
+<li><a href="http://www.scala-sbt.org/release/docs/Examples/Full-Configuration-Example.html">Configure Full Example</a></li>
+<li><a href="http://www.scala-sbt.org/release/docs/Community/Community-Plugins.html">SBT plugins</a></li>
+<li><a href="http://www.scala-sbt.org/release/api/index.html#sbt.Project">SBT Project API Doc</a></li>
+<li><a href="http://www.scala-sbt.org/release/docs/Detailed-Topics/Java-Sources.html">Scala with Java</a></li>
+<li><a href="http://www.scala-sbt.org/release/sxr/sbt/Keys.scala.html">SBT Key Definition</a> (<strong>重要!!!!</strong>)</li>
+</ul>
+
+
+<h3>SBT 的核心</h3>
+
+<h1>就是搞定 <a href="http://www.scala-sbt.org/release/sxr/sbt/Keys.scala.html">SBT Key</a> 設定</h1>
+
+<p>所有寫的程式 (Build.scala) 或是設定 (build.sbt) 都是在設定 sbt key。</p>
+
+<ul>
+<li>SBT 使用 Task 的方式，來做 Build Life Cycle. ex: clean, compile, package</li>
+<li>SBT 也有 plugin。只要將 plugin 的設定，加到專案的 sbt key 中，就會生效，不加，就算有 plugin，也不會啟用。</li>
+<li>SBT 可以自定 Task 及要相依在那個 Task 上。雖然 SBT 的 plugin 不多，但可以透過這樣子的方式來彌補。</li>
+</ul>
+
+
+<h3>SBT 與 Maven 的差異</h3>
+
+<ul>
+<li>SBT 及 Maven 都有 Build Life Cycle 的概念。
+
+<ul>
+<li>SBT 是用 Task 的方式，類似 Ant</li>
+<li>Maven 則定義成 Phase</li>
+</ul>
+</li>
+<li>SBT 及 Maven 都有 plugin 可用
+
+<ul>
+<li>SBT 的 plugin 比較像是輔助的角色，就算不用 plugin，也可自定 Task 來完成相關的工作</li>
+<li>Maven 則全都用 plugin 來執行工作，雖然在 pom.xml 寫的 plugin 不多，但 maven 本身已內建很多 plugin. 可用 <code>mvn help:effective-pom</code> 查.</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>目錄與檔案結構</h3>
+
+<ul>
+<li>build.sbt 與 Build.scala 至少要有一個。</li>
+<li>plugins.sbt 有使用 plugin 時再加。</li>
+<li>build.properties 可有可無。</li>
+</ul>
+
+
+<pre><code>.
+|____single_demo
+  |____build.sbt
+  |____project
+  | |____build.properties
+  | |____Build.scala
+  | |____plugins.sbt
+  |____src
+    |____main
+    | |____java
+    | | |____com
+    | |   |____bridgewell
+    | |     |____demo
+    | |       |____sbt
+    | |         |____single
+    | |           |____App.java
+    | |____resources
+    | |____scala
+    |   |____com
+    |     |____bridgewell
+    |       |____demo
+    |         |____sbt
+    |           |____single
+    |             |____MyApp.scala
+    |____test
+      |____java
+      |____resources
+      |____scala
+</code></pre>
+
+<h3>常用的設定</h3>
+
+<ul>
+<li><p>build.sbt</p>
+
+<pre><code>  import sbt._
+  import Process._
+  import Keys._
+  import AssemblyKeys._
+
+  name := "single-demo"
+
+  version := "1.0"
+
+  scalaVersion := "2.10.4"
+
+  retrieveManaged := true  // 將 dependency libraries 匯出
+
+  libraryDependencies += "mysql" % "mysql-connector-java" % "5.1.30" % "compile" // demo test
+
+  javacOptions ++= Seq("-source", "1.8")
+
+  compileOrder in Compile := CompileOrder.JavaThenScala
+
+  compileOrder in Test := CompileOrder.Mixed
+
+  assemblySettings  // 使用 assembly plugin，將 dependency library 及程式，打包成一個 .jar
+</code></pre></li>
+<li><p>plugins.sbt</p>
+
+<pre><code>  addSbtPlugin("com.earldouglas" % "xsbt-web-plugin" % "0.9.0") // 寫 web 會用到
+
+  addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "2.5.0") // 轉 eclipse
+
+  addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.11.2")  // 打包 jar
+</code></pre></li>
+</ul>
+
+
+<h3>多專案相依</h3>
+
+<ul>
+<li><p>目錄結構</p>
+
+<pre><code>  multi_demo
+  |____build.sbt
+  |____core
+  | |____build.sbt
+  | |____project
+  | |____src
+  |   |____main
+  |   | |____java
+  |   | |____resources
+  |   | |____scala
+  |   |   |____com
+  |   |     |____bridgewell
+  |   |       |____demo
+  |   |         |____sbt
+  |   |           |____multi
+  |   |             |____MyTest.scala
+  |   |____test
+  |     |____java
+  |     |____resources
+  |     |____scala
+  |
+  |____project
+  | |____build.properties
+  | |____plugins.sbt
+  |
+  |____web
+    |____build.sbt
+    |____project
+    |____src
+      |____main
+      | |____java
+      | |____resources
+      | |____scala
+      | | |____com
+      | |   |____bridgewell
+      | |     |____demo
+      | |       |____sbt
+      | |         |____multi
+      | |           |____Hello.scala
+      | |____webapp
+      |   |____WEB-INF
+      |     |____scalate
+      |     | |____layouts
+      |     |   |____default.ssp
+      |     |____test.ssp
+      |     |____web.xml
+      |____test
+        |____java
+        |____resources
+        |____scala
+</code></pre></li>
+<li><p>母專案設定檔 (multi_demo)</p>
+
+<ol>
+<li><p> build.sbt</p>
+
+<pre><code>  import sbt._
+  import Process._
+  import Keys._
+
+  name := "multi-demo"
+
+  version := "1.0"
+
+  scalaVersion := "2.10.4"
+
+  lazy val root = project.in(file(".")).aggregate(core, web)
+
+  lazy val core = project.in(file("core"))
+
+  lazy val web = project.in(file("web")).dependsOn(core) // web depends on core
+</code></pre></li>
+<li><p> plugins.sbt</p>
+
+<pre><code>  addSbtPlugin("com.earldouglas" % "xsbt-web-plugin" % "0.9.0") // 寫 web 會用到
+
+  addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "2.5.0") // 轉 eclipse
+
+  addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.11.2")  // 打包 jar
+</code></pre></li>
+<li><p> build.properties</p>
+
+<pre><code>  sbt.version=0.13.2
+</code></pre></li>
+</ol>
+</li>
+<li><p>子專案 (core) 設定檔</p>
+
+<ol>
+<li><p> build.sbt</p>
+
+<pre><code>  import sbt._
+  import Process._
+  import Keys._
+  import AssemblyKeys._
+
+  name := "core"
+
+  version := "1.0"
+
+  libraryDependencies += "mysql" % "mysql-connector-java" % "5.1.30" % "compile" // demo test
+
+  assemblySettings  // 使用 assembly plugin，將 dependency library 及程式，打包成一個 .jar
+
+  retrieveManaged := true  // 將 dependency libraries 匯出
+
+  compileOrder in Compile := CompileOrder.JavaThenScala
+
+  compileOrder in Test := CompileOrder.Mixed
+</code></pre></li>
+</ol>
+</li>
+<li><p>子專案 (web) 設定檔</p>
+
+<ol>
+<li><p> build.sbt</p>
+
+<pre><code>  import sbt._
+  import Keys._
+  import com.earldouglas.xsbtwebplugin.WebPlugin.webSettings
+
+  name := "web"
+
+  version := "1.0"
+
+  libraryDependencies ++= Seq(
+    "javax.servlet" % "javax.servlet-api" % "3.0.1" % "provided",
+    // "org.eclipse.jetty" % "jetty-webapp" % "9.1.0.v20131115" % "container",
+    // "org.eclipse.jetty" % "jetty-plus"   % "9.1.0.v20131115" % "container",
+    "org.apache.tomcat.embed" % "tomcat-embed-core" % "7.0.22" % "container",
+    "org.apache.tomcat.embed" % "tomcat-embed-logging-juli" % "7.0.22" % "container",
+    "org.apache.tomcat.embed" % "tomcat-embed-jasper" % "7.0.22" % "container",
+    "org.fusesource.scalate" % "scalate-core_2.10" % "1.6.1" % "compile",
+    "mysql" % "mysql-connector-java" % "5.1.30" % "compile"
+  )
+
+  compileOrder in Compile := CompileOrder.JavaThenScala
+
+  compileOrder in Test := CompileOrder.Mixed
+
+  webSettings  // web plugin
+
+  val mydeploy = taskKey[Unit]("Deploy Remote")
+
+  mydeploy := {
+    import scala.sys.process._
+    println("start deploy")
+    // val fileName = "%s/scala-%s/%s_%s-%s.war".format(target.value, scalaBinaryVersion.value, name.value, scalaBinaryVersion.value, version.value)
+    val fileName = (Keys.`package` in Runtime).value.getPath() // 要加 Runtime 這個 scope
+    println(fileName)
+    val admin = "kigi"
+    val pass = "1234"
+    val host = "pc501"
+    val port = 8080
+    val cmdLine = "curl --upload-file %s http://%s:%s@%s:%d/manager/text/deploy?path=/mytest&amp;update=true".format(fileName, admin, pass, host, port)
+    println(cmdLine)
+    val cmd = stringToProcess(cmdLine).!!
+    println(cmd)
+    println()
+  }
+</code></pre></li>
+<li><p> 執行自定的 task <code>sbt mydeploy</code></p></li>
+</ol>
+</li>
+</ul>
+
+
+<h3>專案共用的設定</h3>
+
+<p>每一個專案都要寫類似的設定值，有沒有寫一次，其他就共用的方式，日後維護也方便？</p>
+
+<ul>
+<li><p>SBT Scope</p>
+
+<ul>
+<li><a href="http://www.scala-sbt.org/0.13.2/docs/Getting-Started/Scopes.html">詳細說明</a></li>
+<li><strong>基本上，每個專案的設定都是獨立的，也就是說，在母專案的設定值並不會帶到子專案</strong></li>
+</ul>
+</li>
+<li><p>如果要共用的話</p>
+
+<ul>
+<li>在母專案寫 Build.scala</li>
+</ul>
+
+
+<pre><code>  import sbt._
+  import Keys._
+
+  object BuildSettings {
+    val buildSettings = Seq (
+      organization := "com.bridgewell.aggregator",
+      organizationName := "BridgeWell Inc.",
+      organizationHomepage := Some(new java.net.URL("http://www.bridgewell.com.tw")),
+      version := "1.0",
+      scalaVersion := "2.10.4",
+      retrieveManaged := true,
+      compileOrder in Compile := CompileOrder.JavaThenScala,
+      compileOrder in Test := CompileOrder.Mixed
+    )
+  }
+
+  object Dependencies {
+    val jettyVersion = "9.1.0.v20131115"
+    val tomcatVersion = "7.0.22"
+    val scalateVersion = "1.6.1"
+    val luceneVersion = "4.8.1"
+
+    val cassandraCore = "com.datastax.cassandra" % "cassandra-driver-core" % "2.0.1" % "compile"
+    val jsoup = "org.jsoup" % "jsoup" % "1.7.3" % "compile"
+
+    val commonsCodecc = "commons-codec" % "commons-codec" % "1.9"
+    val commonsLang = "org.apache.commons" % "commons-lang3" % "3.3.1" % "compile"
+    val commonsConfig = "commons-configuration" % "commons-configuration" % "1.10" % "compile"
+
+    val log4j = "log4j" % "log4j" % "1.2.17" % "compile"
+    val servlet = "javax.servlet" % "javax.servlet-api" % "3.0.1" % "provided"
+
+    val jettyWeb = "org.eclipse.jetty" % "jetty-webapp" % jettyVersion % "container"
+    val jettyPlus = "org.eclipse.jetty" % "jetty-plus"   % jettyVersion % "container"
+
+    val tomcatCore = "org.apache.tomcat.embed" % "tomcat-embed-core" % tomcatVersion % "container"
+    val tomcatLog = "org.apache.tomcat.embed" % "tomcat-embed-logging-juli" % tomcatVersion % "container"
+    val tomcatJasper = "org.apache.tomcat.embed" % "tomcat-embed-jasper" % tomcatVersion % "container"
+
+    val scalate = "org.fusesource.scalate" % "scalate-core_2.10" % scalateVersion % "compile"
+    val scalatePlugin = "org.fusesource.scalate" % "sbt-scalate-plugin_2.10" % scalateVersion
+
+    val mysql = "mysql" % "mysql-connector-java" % "5.1.30" % "compile"
+
+    val luceneCore = "org.apache.lucene" % "lucene-core" % "4.8.1" % "compile"
+  }
+</code></pre>
+
+<ul>
+<li>子專案的 build.sbt 加入母專案的設定</li>
+</ul>
+
+
+<pre><code>  name := "core"
+
+  BuildSettings.buildSettings
+
+  libraryDependencies ++= Seq (
+      Dependencies.commonsLang,
+      Dependencies.cassandraCore,
+      Dependencies.mysql
+  )
+</code></pre>
+
+<ul>
+<li>驗証方式：查設定值</li>
+</ul>
+
+
+<pre><code> sbt version
+ sbt retrieveManaged
+ sbt organizationName
+</code></pre></li>
+</ul>
+
+
+<h3>Global Plugins</h3>
+
+<p>在 <code>~./sbt/version_number/plugins/build.sbt</code> 加自已一定會用到的 plugins.
+ex:</p>
+
+<pre><code>addSbtPlugin("com.typesafe.sbteclipse" % "sbteclipse-plugin" % "2.5.0") // 轉 eclipse
+
+addSbtPlugin("com.eed3si9n" % "sbt-assembly" % "0.11.2")  // 打包 jar
+</code></pre>
+
+<h3>SBT Profile (Configuration)</h3>
+
+<p>在 deployment 時，因為主機的環境不同，會有不同的設定檔。在開發專案時，會將不同主機的設定檔也加入專案中，在 deploy 時，會依專案的 profile 設定，使用相對應的設定案，打包成 <code>jar</code> or <code>war</code>
+以下是使用 SBT 的 Configuration 的特性，做成有 profile 的效果。</p>
+
+<pre><code>import sbt._
+import com.earldouglas.xsbtwebplugin.WebPlugin
+
+name := "web"
+
+BuildSettings.buildSettings
+
+WebPlugin.webSettings
+
+libraryDependencies ++= Seq (
+  Dependencies.commonsLang,
+  Dependencies.cassandraCore,
+  Dependencies.mysql,
+  Dependencies.scalate,
+  Dependencies.servlet,
+  Dependencies.jettyWeb,
+  Dependencies.jettyPlus
+)
+
+def prepareTask(profile: String): Def.Initialize[Task[Unit]] = Def.task {
+  println("start copy profile: " + profile)
+  IO.copyFile(sourceDirectory.value / "main" / "webapp" / "WEB-INF" / "config" / "system.properties", baseDirectory.value / "profile" / profile / "webapp" / "WEB-INF" / "config" / "system.properties.tmp", true)
+  IO.copyFile(baseDirectory.value / "profile" / profile / "webapp" / "WEB-INF" / "config" / "system.properties", sourceDirectory.value / "main" / "webapp" / "WEB-INF" / "config" / "system.properties", true)
+  println("end copy profile: " + profile)
+}
+
+def postTask(profile: String): Def.Initialize[Task[Unit]] = Def.task {
+  IO.copyFile(baseDirectory.value / "profile" / profile / "webapp" / "WEB-INF" / "config" / "system.properties.tmp", sourceDirectory.value / "main" / "webapp" / "WEB-INF" / "config" / "system.properties", true)
+  IO.delete(baseDirectory.value / "profile" / profile / "webapp" / "WEB-INF" / "config" / "system.properties.tmp")
+}
+
+def deployTask(host: String, account: String, pass: String, port: Int = 8080): Def.Initialize[Task[File]] = Def.task {
+  val file = (Keys.`package` in Runtime).value
+  val cmdLine = "curl --upload-file %s http://%s:%s@%s:%d/manager/text/deploy?path=/web&amp;update=true".format(file.getPath(), account, pass, host, port)
+  println(cmdLine)
+  //val cmd = scala.sys.process.stringToProcess(cmdLine).!!
+  //println(cmd)
+  file
+}
+
+val prepare = taskKey[Unit]("prepare profile configs")
+
+val webdeploy = taskKey[Unit]("web remote deployment")
+
+val putremote = taskKey[File]("put war file to remote server")
+
+val PC501 = config("pc501")
+
+prepare in PC501 &lt;&lt;= prepareTask("pc501")
+
+putremote in PC501 &lt;&lt;= deployTask("pc501", "kigi", "1234", 8080).dependsOn(prepare in PC501)
+
+webdeploy in PC501 &lt;&lt;= postTask("pc501").dependsOn(putremote in PC501).dependsOn(update).dependsOn(clean)
+</code></pre>
+
+<p>執行指令：<code>sbt pc501:webdeploy</code></p>
+
+<h2>總結</h2>
+
+<p>了解 SBT 及 Maven 核心的原理後，其他的就上網找文件或者 sample 來做。</p>
+
+<p>Maven 設定 plugin 是件很煩雜工作，不會用是很正常的。所以後來才有 <a href="http://www.codedata.com.tw/tag/gradle/">Gradle</a> 及其他類似的工具出現。</p>
+
+<p><strong>建議寫好的設定檔要留著，到時候就用大絕招(copy&amp;paste)就好</strong></p>
+
+<h2>注意事項</h2>
+
+<ul>
+<li>不要在 Task 直接呼叫另一個 Task (ex: <code>Task.value</code>)。因為 SBT 不會依照你寫的程式順序來執行，反而會在執行 Task 前，就先執行被呼叫的 Task，行為類似 <code>dependsOn</code>.</li>
+<li><code>dependsOn</code> 不要用 <code>dependsOn(a, b)</code> ；因為 depend 的順序會被 SBT 排序，不會是你預期的順序，改用 <code>dependsOn(a).dependsOn(b)</code> 這樣子，會先執行 <code>b</code> 再執行 <code>a</code>.</li>
+<li>下完 <code>clean</code> 後，記得下 <code>update</code>，以免 eclipse 專案或下次 build 會少檔案。</li>
+</ul>
+
+</body>
+</html>
