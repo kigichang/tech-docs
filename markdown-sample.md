@@ -161,7 +161,7 @@ unsort list 使用 `*`開頭，sort list 使用數字+`.`+空白開頭。MacDown
 # <a name="format"></a>語法 6: 字體效果
 * 粗體：`**bold**`, 效果：**bold**
 * 斜體：`*italic*`, 效果：*italic*
-* * 刪去：`~~strike through~~`，效果：~~strike through~~
+* 刪去：`~~strike through~~`，效果：~~strike through~~
 * 底線：`_underline_`, 效果：_underline_ (Atom 不支援)
 * Highlight: `==Highlight==`, ==Highlight== (Atom 不支援)
 * Superscript: `hoge\^(fuga)`, hoge^(fuga) (Atom 不支援)
