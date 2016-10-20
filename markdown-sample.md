@@ -7,6 +7,7 @@
 * [語法 5: List](#list)
 * [語法 6: 字體效果](#format)
 * [語法 7: 表格](#table)
+* [語法 8: 數學公式](#math)
 
 # <a name="header"></a>語法 1: 標題
 語法：
@@ -213,7 +214,7 @@ Highlight           | \==So good\==    | <mark>So good</mark>  |
 Superscript         | hoge\^(fuga)     | hoge<sup>fuga</sup>   |
 Autolink            | http://t.co      | <http://t.co>         |
 
-# <a name="math"></a>語法 8: 數字公式
+# <a name="math"></a>語法 8: 數學公式
 
 數學公式的寫法，主要是依據 [LaTeX/Mathematics](https://en.wikibooks.org/wiki/LaTeX/Mathematics)。每種工具不一定會有支援，且語法會有些許的不同。
 
